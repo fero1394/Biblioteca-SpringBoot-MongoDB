@@ -1,4 +1,4 @@
-package com.example.bibliotecaSpringBootMongoDB.controller;
+package com.example.bibliotecaSpringBootMongoDB.modelo.controller;
 
 import com.example.bibliotecaSpringBootMongoDB.dto.RecursoDTO;
 import com.example.bibliotecaSpringBootMongoDB.servicio.ServicioRecurso;
