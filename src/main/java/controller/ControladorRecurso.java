@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import servicio.ServicioRecurso;
+import utils.Filtro;
 
 @RestController
 @RequestMapping("/recursos")
@@ -24,5 +25,47 @@ public class ControladorRecurso {
         return new ResponseEntity(servicioRecurso.comprobarDisponibilidad(id), HttpStatus.OK);
     }
 
+    @GetMapping("")
+    public ResponseEntity<RecursoDTO> mostrarRecursos() {
+        return new ResponseEntity(servicioRecurso.buscarTodos(), HttpStatus.OK);
+    }
+
+    @PutMapping("/prestar/{id}")
+    public ResponseEntity<RecursoDTO> prestar(@PathVariable String id) {
+        return new ResponseEntity(servicioRecurso.prestarRecurso(id), HttpStatus.OK);
+
+    }
+
+    @PutMapping("/devolver/{id}")
+    public ResponseEntity<RecursoDTO> devolver(@PathVariable String id) {
+        return new ResponseEntity(servicioRecurso.devolverRecurso(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/filtrarArea/{area}")
+    public ResponseEntity<RecursoDTO> filtrarArea(@PathVariable String area) {
+        return new ResponseEntity(servicioRecurso.buscarPorArea(area), HttpStatus.OK);
+    }
+
+    @GetMapping("/filtrarTipo/{tipo}")
+    public ResponseEntity<RecursoDTO> mostrarDisponibilida(@PathVariable String tipo) {
+        return new ResponseEntity(servicioRecurso.buscarPorTipo(tipo), HttpStatus.OK);
+    }
+
+    @GetMapping("/filtrarAreaYTipo")
+    public ResponseEntity<RecursoDTO> mostrarDisponibilidd(@RequestBody Filtro filtro) {
+        return new ResponseEntity(servicioRecurso.buscarPorAreaYTipo(filtro.getArea(), filtro.getTipo()), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable("id") String id) {
+        try {
+            servicioRecurso.borrarRecursoPorId(id);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+
+    }
 
 }
