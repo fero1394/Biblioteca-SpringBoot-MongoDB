@@ -1,4 +1,4 @@
-package com.example.bibliotecaSpringBootMongoDB.modelo.controller;
+package com.example.bibliotecaSpringBootMongoDB.controlador;
 
 import com.example.bibliotecaSpringBootMongoDB.dto.RecursoDTO;
 import com.example.bibliotecaSpringBootMongoDB.servicio.ServicioRecurso;
@@ -64,8 +64,5 @@ public class ControladorRecurso {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-
-    }
-
+        }    }
 }
