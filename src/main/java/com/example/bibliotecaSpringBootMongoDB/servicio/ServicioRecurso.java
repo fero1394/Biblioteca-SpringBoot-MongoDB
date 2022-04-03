@@ -1,12 +1,14 @@
-package servicio;
+package com.example.bibliotecaSpringBootMongoDB.servicio;
 
-import dto.RecursoDTO;
-import mapper.RecursoMapper;
-import modelo.Recurso;
+import com.example.bibliotecaSpringBootMongoDB.dto.RecursoDTO;
+import com.example.bibliotecaSpringBootMongoDB.mapper.RecursoMapper;
+import com.example.bibliotecaSpringBootMongoDB.modelo.Recurso;
+import com.example.bibliotecaSpringBootMongoDB.repositorio.RepositorioRecurso;
+import com.example.bibliotecaSpringBootMongoDB.utils.Mensaje;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositorio.RepositorioRecurso;
-import utils.Mensaje;
+
 
 import java.util.List;
 

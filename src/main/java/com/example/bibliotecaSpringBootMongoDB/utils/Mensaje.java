@@ -1,4 +1,4 @@
-package utils;
+package com.example.bibliotecaSpringBootMongoDB.utils;
 
 public class Mensaje {
     private boolean disponible;

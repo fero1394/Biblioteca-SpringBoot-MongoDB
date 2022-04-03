@@ -1,15 +1,15 @@
-package controller;
+package com.example.bibliotecaSpringBootMongoDB.controller;
 
-import dto.RecursoDTO;
+import com.example.bibliotecaSpringBootMongoDB.dto.RecursoDTO;
+import com.example.bibliotecaSpringBootMongoDB.servicio.ServicioRecurso;
+import com.example.bibliotecaSpringBootMongoDB.utils.Filtro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import servicio.ServicioRecurso;
-import utils.Filtro;
 
 @RestController
-@RequestMapping("/recursos")
+@RequestMapping("/biblioteca")
 public class ControladorRecurso {
 
     @Autowired

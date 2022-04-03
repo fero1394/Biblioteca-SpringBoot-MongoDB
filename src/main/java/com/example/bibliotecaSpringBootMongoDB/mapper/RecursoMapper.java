@@ -1,7 +1,8 @@
-package mapper;
+package com.example.bibliotecaSpringBootMongoDB.mapper;
 
-import dto.RecursoDTO;
-import modelo.Recurso;
+import com.example.bibliotecaSpringBootMongoDB.dto.RecursoDTO;
+import com.example.bibliotecaSpringBootMongoDB.modelo.Recurso;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;

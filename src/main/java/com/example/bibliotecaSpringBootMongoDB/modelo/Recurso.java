@@ -1,23 +1,38 @@
-package dto;
+package com.example.bibliotecaSpringBootMongoDB.modelo;
 
-import utils.Area;
-import utils.Tipo;
+import com.example.bibliotecaSpringBootMongoDB.utils.Area;
+import com.example.bibliotecaSpringBootMongoDB.utils.Tipo;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class RecursoDTO {
+@Document("recursos")
+public class Recurso {
+
+    @Id
     private String id;
     private Tipo tipo;
-    private boolean disponible;
+    private boolean disponible = true;
     private Area area;
     private String nombre;
     private String fecha;
 
-    public RecursoDTO(){
+    public Recurso(){
     }
 
-    public RecursoDTO(Tipo tipo, Area area, String nombre) {
+    public Recurso(String id, Tipo tipo, Area area, String nombre) {
+        this.id = id;
         this.tipo = tipo;
         this.area = area;
         this.nombre = nombre;
+        this.fecha = fecha;
+
+    }
+
+    public Recurso(Tipo tipo, Area area, String nombre) {
+        this.tipo = tipo;
+        this.area = area;
+        this.nombre = nombre;
+        this.fecha = fecha;
 
     }
 

@@ -1,4 +1,4 @@
-package utils;
+package com.example.bibliotecaSpringBootMongoDB.utils;
 
 public enum Area {
     CIENCIAS,

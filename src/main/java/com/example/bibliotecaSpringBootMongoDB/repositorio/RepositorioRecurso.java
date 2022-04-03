@@ -1,6 +1,6 @@
-package repositorio;
+package com.example.bibliotecaSpringBootMongoDB.repositorio;
 
-import modelo.Recurso;
+import com.example.bibliotecaSpringBootMongoDB.modelo.Recurso;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
